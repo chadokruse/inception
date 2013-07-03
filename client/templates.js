@@ -19,6 +19,10 @@ Template.add_or_draft_app.draft = function() {
   return MadewithSession.get('draft');
 };
 
+Template.draft_app.rendered = function() {
+   $('.tooltips').tooltip() //initialize all tooltips in this template
+};
+
 Template.draft_app.events({
   'keyup #draft_description, keyup #draft_name, keyup #draft_github_url': function() {
     $('.draft_app_submit').attr('disabled',
@@ -77,19 +81,20 @@ Template.app.events({
 
     event.stopPropagation(); // so that we don't collapse the app
   },
-  'click .upvote': function(event) {
+  'click .vote': function(event) {
     Meteor.call('vote', this.name);
-    Router.setSelectedAppName(this.name);
+    // Router.setSelectedAppName(this.name);
     event.stopPropagation();
   },
-  'click .app': function() {
-    Router.setSelectedAppName(this.name);
-  },
-  'click .app_description, click .comments_expanded_arrow': function(event) {
+  
+  'click #comments': function(event) {
     if (MadewithSession.getSelectedNormalizedAppName() === this.name) {
       Router.setSelectedAppName(null);
+      }
+    else
+      Router.setSelectedAppName(this.name);
       event.stopPropagation();
-    }
+    
   }
 });
 

@@ -6,6 +6,14 @@
   <div class="container">
     <div class="row-fluid">
       <div class="span8 offset2">
+      {{> header}}
+      </div>
+    </div>
+  </div>
+  {{> intro}}
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8 offset2">
       {{> app_list}}
       </div>
     </div>
@@ -16,7 +24,7 @@
 <template name="app_list">
   <div class="app_list">
     <div class="app_list_inner">
-      {{> header}}
+      <p style="font-size:1.2em;">What would make your life easier?</p>
       {{> draft_app}} <!-- If you want to hide the input form on page load: > add_or_draft_app -->
       {{> action_bar}}
     <br style="clear: both;">
@@ -27,10 +35,16 @@
   </div>
 </template>
 
+<template name="top-border">
+  <div class="top-border">Welcome foundations, philanthropists, and nonprofits!
+  </div>
+</template>
+
 <template name="header">
   <div class="header">
-    <div class="header_madewith">Inception
+    <div class="header_madewith pull-left"><i class="icon-lightbulb" style="color:#ff8756"></i> Inception
     </div><!--Help the hacker community find something meaningful to work on. -->
+    <div class="pull-right" style="margin-top:18px;"><em>What should Silicon Valley work on next?<br> <span style="color:#ff8756">Help developers discover society's biggest problems</span></em></div>
   </div>
 </template>
 
@@ -46,7 +60,7 @@
 
 <template name="draft_app">
   <form class="form-inline">
-    <div class="app">
+    <div class="app-input">
       <div class="draft_field">
         <label for="draft_description">As a</label> <input id="draft_description"
         class="span3"
@@ -59,7 +73,8 @@
         <label for="draft_password" disabled=true>Password</label>
         <input type="password" id="draft_password" placeholder="(for editing later)" class="disabled" />
       </div>
-
+      <div class="pull-left muted"><h6><a href="javascript:void(0)" class="tooltips" data-toggle="tooltip" data-placement="right" title="Describe something that annoys you on a daily basis. Focus on a pain point, not an idea."><i class="icon-info-sign"></i> Tips<h6></a>
+      </div>
       <div class="pull-right">
         <!--button class="draft_app_cancel">cancel</button-->
         <button class="btn draft_app_submit" disabled=true>submit</button>
@@ -68,28 +83,43 @@
   </form>
 </template>
 
-<template name="app">
+<template name="intro">
+  <div id="intro">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="intro span8 offset2">
+          <p>This site was created to connect the philanthropic and hacker communities. There are thousands of entrepreneurial developers looking for new problems to solve, and most will default to what they know: photo-sharing apps and tech tools they will use themselves.</p>
+          <!--div class="row-fluid">
+            <div class="span3 offset1">Philanthropists</div>
+            <div class="span2">An arrow</div>
+            <div class="span3">Hackers</div>
+          </div-->
+        </div>
+      </div>
+    </div>
+  </template>
+
+<template name="app2">
   <div class="app {{app_additional_class}}" id="app_{{name_css_id}}">
     {{> install_badge_instructions}} <!-- What else could this alert be used for? -->
     <div class="app_description">
-      <div class="draft_description">As a <span>{{description}}</span></div><br>
-      <div class="draft_name">I want<br> <span class="emphasis">{{name}}</span></div><br>
+      <div class="draft_description">As a <span><em>{{description}}</em></span></div><br>
+      <div class="draft_name emphasis">I want {{name}}</div><br>
       <div class="draft_github_url">so that {{github_url}}</div>
     </div>
     <div class="app_details">
-      <span class="upvote">▲</span>
-      <span class="vote_count">{{vote_count}} votes</span>
-      ::
-      <span class="comment_count">
+      <span class="upvote pull-right">▲</span>
+      <div class="vote_count pull-right">{{vote_count}} <span>people share this problem</span></div>
+      <div class="comment_count pull-left">
         {{comment_count}} comments
-        <span class="comments_expanded_arrow">
+        <div class="comments_expanded_arrow">
           {{#if comments_expanded}}
           (hide)
           {{else}}
           (view)
           {{/if}}
-        </span>
-      </span>
+        </div>
+      </div>
     </div>
     {{#if comments_expanded}}
     {{> app_comments}}
@@ -97,15 +127,40 @@
   </div>
 </template>
 
-<template name="install_badge_instructions">
-  {{#if just_added_app}}
-  <div class="install_badge_instructions alert-success">
-    To add an official "Made with Meteor" badge to your app, just run:<br><strong><code style="font-size: 120%">meteor add madewith</code></strong>.
+<template name="app">
+  <div class="app {{app_additional_class}}" id="app_{{name_css_id}}">
+    <div class="app_description">
+      As a <span>{{description}}</span><strong> I want {{name}}</strong>
+      <div class="deEmphasize">so that {{github_url}}
+      </div>
+    </div>
+    <div class="app_details">
+      <div class="vote pull-left">
+        <div class="upvote"><i class="icon-circle-arrow-up"></i></div>
+          <div class="vote_count">{{vote_count}} <div class="vote-hover-replace"><span>people share this problem</span></div>
+        </div>
+      </div>
+      <div id="comments" class="pull-right">
+        <span class="comment_count">
+          {{comment_count}} comments
+          <span class="comments_expanded_arrow">
+            {{#if comments_expanded}}
+            <i class="icon-collapse-alt"></i>
+            {{else}}
+            <i class="icon-expand-alt"></i>
+            {{/if}}
+          </span>
+        </span>
+      </div>
+    </div>
+    {{#if comments_expanded}}
+    {{> app_comments}}
+    {{/if}}
   </div>
-  {{/if}}
 </template>
 
 <template name="app_comments">
+  <div style="clear:both;margin-top:50px;"> <!-- Holy hack batman TODO: Fix top margin hack -->
   {{#each comments}}
   <div class="comment">
     <div class="comment_author">{{comment_author}}</div>
@@ -113,16 +168,21 @@
   </div>
   {{/each}}
   <div class="new_comment">
-    <input id="new_comment_author" placeholder="your name"/>
+    <input id="new_comment_author" placeholder=" Your name"/>
     <textarea id="new_comment_comment"></textarea>
-    <button class="new_comment_submit" disabled="true">add comment</button>
+    <button class="btn new_comment_submit" disabled="true">add comment</button>
   </div>
 </template>
 
 <template name="action_bar">
-  <div class="action_bar btn-group">
+  <div class="action_bar_container">
+  <div class="action_bar examples_madewith">
+  </div>
+  <div class="action_bar btn-group pull-left">
     <span id="sort_toggle_popular"
           class='btn sort_toggle sort_toggle_left {{additional_class "popular"}}'>Popular</span><span id="sort_toggle_recent"
           class='btn sort_toggle sort_toggle_right {{additional_class "recent"}}'>Recent</span>
+  </div>
+  </div>
   </div>
 </template>
