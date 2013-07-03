@@ -20,16 +20,17 @@ Template.add_or_draft_app.draft = function() {
 };
 
 Template.draft_app.events({
-  'keyup #draft_description, keyup #draft_name': function() {
+  'keyup #draft_description, keyup #draft_name, keyup #draft_github_url': function() {
     $('.draft_app_submit').attr('disabled',
                                 $('#draft_description').val() === '' ||
-                                $('#draft_name').val() === '');
+                                $('#draft_name').val() === '' ||
+                                $('#draft_github_url').val() === '');
   },
   'click .draft_app_cancel': function() {
     MadewithSession.set('draft', false);
   },
   'click .draft_app_submit': function() {
-    var name = Madewith.normalizeAppName($('#draft_name').val());
+    var name = $('#draft_name').val();
     var salt = Meteor.uuid();
     var password = $('#draft_password').val();
 
@@ -93,7 +94,7 @@ Template.app.events({
 });
 
 Template.app.name_css_id = function () {
-  return this.name.replace(/\./g, '_');
+  return this.name.replace(/\./g, '_'); // replace any decimal points with an underline so css ID works properly
 };
 
 Template.app.app_additional_class = function() {

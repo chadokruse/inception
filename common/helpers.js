@@ -8,16 +8,12 @@ Madewith.commentsForApp = function(app) {
 
 // canonicalize a URL or bare hostname into a FQDN
 Madewith.normalizeAppName = function (name) {
-  var match = name.match('(.*://)?([a-zA-Z0-9\._\-]+)/?.*$');
-  var host = match && match[2];
-
-  if (!host)
-    return null;
-  else
-    // append '.meteor.com' if it's a bare hostname
-    return host.match(/\./) ? host : host + '.meteor.com';
+  // Guts have been stripped out
+    return name;
 };
 
+// No longer using this (as we don't ask for any urls)
+//
 // Madewith.removeUrlProtocol('http://foo.com') === 'foo.com'
 // Madewith.removeUrlProtocol('bar.com') === 'bar.com'
 Madewith.removeUrlProtocol = function(url) {
@@ -33,9 +29,6 @@ Madewith.removeUrlProtocol = function(url) {
 // This code is duplicated in the madewith smartpackage (see #DisplayAppName)
 // XXX - Can this code somehow be shared reasonably?
 Madewith.displayAppName = function (name) {
-  var parts = name.split('.');
-  if (parts.length === 3 && parts[1] === 'meteor' && parts[2] === 'com')
-    return parts[0];
-  else
+  // Guts have been stripped out
     return name;
 };

@@ -6,6 +6,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-image: url('/bg-tile.png');
   background-position: center;
+  margin-top: 50px;
+  font-size: 18px;
 }
 
 .rocketship {
@@ -20,18 +22,11 @@ body {
   z-index: -1;
 }
 
-.container {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-}
-
-.inner_container {
-  margin-top: 10px;
+.header {
+  // background: url(/small-rocketship.gif) no-repeat 500px center;
+  height: 60px;
+  border-bottom: 5px solid white;
   margin-bottom: 10px;
-  height: 100%;
-  position: relative;
 }
 
 .header_meteor_link {
@@ -72,8 +67,19 @@ body {
 }
 
 .app_description {
-  font-size: 2em;
+  font-size: 1em;
+  line-height: 1em;
 }
+
+.draft_name {
+  color: red;
+}
+
+.emphasis {
+    // font-size: 2em;
+    // line-height: 1.5em;
+    // font-weight: bold;
+  }
 
 textarea.app_description {
   width: 100%;
@@ -90,7 +96,8 @@ textarea.app_description {
   font-size: 100%;
   font-weight: bold;
   padding: 1px;
-  line-height: 28px;
+  line-height: 1em;
+  margin-bottom: 20px;
 }
 
 .draft_app_input {
@@ -101,21 +108,28 @@ textarea.app_description {
   padding: 1px;
 }
 
-.draft_buttons {
-  float: right;
-}
 
 .draft_buttons button {
   font-size: 100%;
 }
 
-.draft_app_submit {
-  width: 200px;
-  background: #dd3;
+[disabled], .disabled {
+  color: #ccc;
+  opacity: 0.65;
 }
 
-.draft_app_cancel {
-  width: 200px;
+#draft_password_show_toggle {
+  display: none;
+}
+
+input {
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px dashed #c2c2c2;
+  border-left: none;
+  width: 98%;
+  // font-size: ;
+  // color: ;
 }
 
 .add_app {
@@ -155,14 +169,8 @@ border-color: #05C #05C #36a #05C;
 }
 
 .comments_expanded_arrow {
-  font-size: 0.7em;
+  // font-size: 0.7em;
   vertical-align: middle;
-}
-
-.header {
-  background: url(/small-rocketship.gif) no-repeat 500px center;
-  border-bottom: 5px solid white;
-  margin-bottom: 10px;
 }
 
 .header_madewith {
