@@ -51,7 +51,7 @@ Template.draft_app.events({
         Router.setSelectedAppName(name);
         Madewith.animateToSelectedApp();
         MadewithSession.set('draft', false);
-        MadewithSession.set('lastAddedAppName', name);
+        //MadewithSession.set('lastAddedAppName', name); // No longer using lastAddedAppName
       }
     });
   }
@@ -145,7 +145,7 @@ Template.action_bar.additional_class = function(order) {
   return MadewithSession.equals('order', order) ? 'sort_toggle_selected' : '';
 };
 
-Template.install_badge_instructions.just_added_app = function() {
-  return MadewithSession.equals('lastAddedAppName', this.name);
-};
+//Template.install_badge_instructions.just_added_app = function() {
+ // return MadewithSession.equals('lastAddedAppName', this.name);
+//};
 
