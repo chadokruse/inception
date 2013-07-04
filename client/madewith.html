@@ -1,5 +1,6 @@
 <head>
   <title>Inception::Philanthropists inspiring hackers</title>
+  <link href="http://fonts.googleapis.com/css?family=Raleway&subset=latin" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -18,27 +19,14 @@
       </div>
     </div>
   </div>
-  <footer>
-    <div class="container">
-      <div class="row-fluid">
-        <div class="span8 offset2">
-          <div class="text-center"><p><h4>Brought to you by</h4></p><p><a class="logo" href="http://www.getkyn.com"><img src="/kyn.png"></a></p>
-          </div>
-          <div class="text-center" style="margin-top:50px;"><p><h4>Open Source</h4></p><p>The source code for this app can be found on <a href="https://www.github.com/chadokruse/inception">Github</a></p>
-          </div>
-          <div class="text-center" style="margin-top:50px;"><p><h4>Credits</h4></p><p>Mad Libs-style user stories inspired by <a href="https://sprint.ly">sprint.ly</a></p><p>This app uses <a href="">meteor.js</a> and is largely based on this <a href="https://github.com/meteor/madewith">open source sample app</a> by <a href="https://github.com/n1mmy">n1mmy</a></a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  {{> footer}}
   <div class="rocketship"></div>
 </body>
 
 <template name="app_list">
   <div class="app_list">
     <div class="app_list_inner">
-      <p class="examples_madewith">Describe your idea</p>
+      <p class="examples_madewith">Describe your issue</p>
       {{> draft_app}} <!-- If you want to hide the input form on page load: > add_or_draft_app -->
       {{> action_bar}}
     <br style="clear: both;">
@@ -49,16 +37,11 @@
   </div>
 </template>
 
-<template name="top-border">
-  <div class="top-border">Welcome foundations, philanthropists, and nonprofits!
-  </div>
-</template>
-
 <template name="header">
   <div class="header">
     <div class="header_madewith pull-left"><i class="icon-lightbulb" style="color:#ff8756"></i> Inception
     </div><!--Help the hacker community find something meaningful to work on. -->
-    <div class="pull-right" style="margin-top:18px;"><em>What should Silicon Valley work on next?<br> <span style="color:#95b7c3">Help developers discover society's biggest problems</span></em></div>
+    <div class="pull-right" style="margin-top:18px;"><em>Inspiring developers to do well by doing good<br> <span style="color:#95b7c3">Startup ideas from the charitable world</span></em></div>
   </div>
 </template>
 
@@ -130,15 +113,14 @@
       </div>
     </div>
   </div>
-  <div id="intro-subtext">
-    
+  <div id="intro-subtext">    
       <div class="container">
         <div class="row-fluid">
-          <div class="intro span8 offset2 text-center">Because the world doesn't need another photosharing app
+          <div id="ticker" class="intro span8 offset2 text-center">
+              <div>What can Silicon Valley create to make you more effective in your work?</div>
           </div>
         </div>
-      </div>
-    
+      </div>    
   </div>
 </template>
 
@@ -200,4 +182,21 @@
       </div>
     </div>
 </div>
+</template>
+
+<template name="footer">
+  <footer>
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span8 offset2">
+          <div class="text-center"><p><h4>A side project from the folks at</h4></p><p><a class="logo" href="http://www.getkyn.com"><img src="/kyn.png"></a></p>
+          </div>
+          <div class="text-center" style="margin-top:50px;"><p><h4>Open Source</h4></p><p>The source code for this app can be found on <a href="https://www.github.com/chadokruse/inception">Github</a></p>
+          </div>
+          <div class="text-center" style="margin-top:50px;"><p><h4>Credits</h4></p><p>Mad Libs-style user stories inspired by <a href="https://sprint.ly">Sprint.ly</a>, a product management tool we use and love</p><p>This app uses <a href="">meteor.js</a> and is largely based on this <a href="https://github.com/meteor/madewith">open source sample app</a> by <a href="https://github.com/n1mmy">n1mmy</a></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </template>
