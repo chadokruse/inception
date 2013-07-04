@@ -20,7 +20,7 @@ Template.add_or_draft_app.draft = function() {
 };
 
 Template.draft_app.rendered = function() {
-   $('.tooltips').tooltip() //initialize all tooltips in this template
+   $('.tooltips').tooltip(); //initialize all tooltips in this template
 };
 
 Template.draft_app.events({

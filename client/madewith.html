@@ -24,7 +24,7 @@
 <template name="app_list">
   <div class="app_list">
     <div class="app_list_inner">
-      <p style="font-size:1.2em;">What would make your life easier?</p>
+      <p class="examples_madewith">Describe your idea</p>
       {{> draft_app}} <!-- If you want to hide the input form on page load: > add_or_draft_app -->
       {{> action_bar}}
     <br style="clear: both;">
@@ -44,7 +44,7 @@
   <div class="header">
     <div class="header_madewith pull-left"><i class="icon-lightbulb" style="color:#ff8756"></i> Inception
     </div><!--Help the hacker community find something meaningful to work on. -->
-    <div class="pull-right" style="margin-top:18px;"><em>What should Silicon Valley work on next?<br> <span style="color:#ff8756">Help developers discover society's biggest problems</span></em></div>
+    <div class="pull-right" style="margin-top:18px;"><em>What should Silicon Valley work on next?<br> <span style="color:#95b7c3">Help developers discover society's biggest problems</span></em></div>
   </div>
 </template>
 
@@ -80,6 +80,7 @@
         <button class="btn draft_app_submit" disabled=true>submit</button>
       </div>
     </div>
+    <div class="required muted pull-right">* all fields required</div>
   </form>
 </template>
 
@@ -88,44 +89,44 @@
     <div class="container">
       <div class="row-fluid">
         <div class="intro span8 offset2">
-          <p>This site was created to connect the philanthropic and hacker communities. There are thousands of entrepreneurial developers looking for new problems to solve, and most will default to what they know: photo-sharing apps and tech tools they will use themselves.</p>
-          <!--div class="row-fluid">
-            <div class="span3 offset1">Philanthropists</div>
-            <div class="span2">An arrow</div>
-            <div class="span3">Hackers</div>
-          </div-->
+          <!--dl class="dl-horizontal">
+            <dt>Foundations and nonprofits:</dt>
+            <dd>Inspire startup teams to tackle bigger issues by describing a pain point you see in your everyday charitable work.</dd>
+            <dt>Developers and startup teams:</dt>
+            <dd>Some stuff</dd>
+          </dl-->
+          <!--p>This site was created to connect the philanthropic and hacker communities. There are thousands of entrepreneurial developers looking for new problems to solve, and most will default to what they know: photo-sharing apps and tech tools they will use themselves.</p-->
+          <!--p class="text-center" style="font-size:1.2em;font-weight:bold;"><strong>Foundations and nonprofits:</strong> Inspire startup teams to tackle bigger issues by describing a pain point you see in your everyday charitable work. </p-->
+          <div class="row-fluid">
+            <div class="span4 pull-left"><h3>Philanthropists</h3></div>
+            <div class="span4 pagination-centered"></div>
+            <div class="span4 pull-right text-right"><h3>Weekend Hackers</h3></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4 pull-left"><h3>Nonprofits</h3></div>
+            <div class="intro-center-text span4 pagination-centered"><h3>inspiring <i class="icon-circle-arrow-right"></i></h3></div>
+            <div class="span4 pull-right text-right"><h3>Developers</h3></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4 pull-left"><h3>Foundations</h3></div>
+            <div class="span4 pagination-centered"></div>
+            <div class="span4 pull-right text-right"><h3>Startup Teams</h3></div>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+    <div id="intro-subtext">
+      
+        <div class="container">
+          <div class="row-fluid">
+            <div class="intro span8 offset2 text-center">Because the world doesn't need another photosharing app
+            </div>
+          </div>
+        </div>
+      
     </div>
   </template>
-
-<template name="app2">
-  <div class="app {{app_additional_class}}" id="app_{{name_css_id}}">
-    {{> install_badge_instructions}} <!-- What else could this alert be used for? -->
-    <div class="app_description">
-      <div class="draft_description">As a <span><em>{{description}}</em></span></div><br>
-      <div class="draft_name emphasis">I want {{name}}</div><br>
-      <div class="draft_github_url">so that {{github_url}}</div>
-    </div>
-    <div class="app_details">
-      <span class="upvote pull-right">▲</span>
-      <div class="vote_count pull-right">{{vote_count}} <span>people share this problem</span></div>
-      <div class="comment_count pull-left">
-        {{comment_count}} comments
-        <div class="comments_expanded_arrow">
-          {{#if comments_expanded}}
-          (hide)
-          {{else}}
-          (view)
-          {{/if}}
-        </div>
-      </div>
-    </div>
-    {{#if comments_expanded}}
-    {{> app_comments}}
-    {{/if}}
-  </div>
-</template>
 
 <template name="app">
   <div class="app {{app_additional_class}}" id="app_{{name_css_id}}">
@@ -176,13 +177,13 @@
 
 <template name="action_bar">
   <div class="action_bar_container">
-  <div class="action_bar examples_madewith">
-  </div>
-  <div class="action_bar btn-group pull-left">
-    <span id="sort_toggle_popular"
-          class='btn sort_toggle sort_toggle_left {{additional_class "popular"}}'>Popular</span><span id="sort_toggle_recent"
-          class='btn sort_toggle sort_toggle_right {{additional_class "recent"}}'>Recent</span>
-  </div>
-  </div>
-  </div>
+    <div class="action_bar btn-group pull-left">
+      <div id="sort_toggle_popular"
+      class='btn sort_toggle sort_toggle_left {{additional_class "popular"}}'>Popular
+      </div>
+      <div id="sort_toggle_recent"
+      class='btn sort_toggle sort_toggle_right {{additional_class "recent"}}'>Recent
+      </div>
+    </div>
+</div>
 </template>

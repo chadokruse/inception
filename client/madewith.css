@@ -75,7 +75,7 @@ a, a:hover {
 }
 
 #intro {
-  margin: 50px 0; 
+  margin: 50px 0 0 0; 
   background-color:#ff8756;
   color:white;
   font-size: .8em;
@@ -84,6 +84,24 @@ a, a:hover {
 .intro {
   //margin: 50px 0;
   padding: 20px;
+}
+
+.intro-center-text {
+  background-color:#ffc3aa;
+  color:#ff8756;
+  border-radius:50px;
+}
+
+#intro-subtext {
+  margin: 0 0 75px 0; 
+  //background-color:#ffc3aa;
+  //background-color:#ff6f40;
+  background-color: #95b7c3;
+  //color:#ff8756;
+  //color:#ffc3aa;
+  color: white;
+  font-size: 1.0em;
+  font-weight: bold;
 }
 
 .app_list {
@@ -113,6 +131,7 @@ a, a:hover {
   //background: #3498DB;
   //color: white;
   border-radius: 8px;
+  border-bottom: 1px solid #ddd;
   position: relative;
   overflow: hidden;
 }
@@ -220,6 +239,11 @@ textarea.app_description {
   display: none;
 }
 
+.required {
+  font-size:0.5em;
+  padding-right: 20px;
+}
+
 input {
   border-top: none;
   border-right: none;
@@ -287,16 +311,15 @@ border-color: #05C #05C #36a #05C;
 }
 
 .examples_madewith {
-  font-size: 2.5em;
-  float: left;
+  font-size: 1.7em;
   font-weight: 700;
-  color: white;
   letter-spacing: -2px;
-  text-shadow: 1px -1px #ccc;
+  text-shadow: 1px 1px #fff;
+  margin-bottom: 30px;
 }
 
 .action_bar {
-  padding-top: 25px;
+  padding-top: 50px;
 }
 
 .action_bar_container {
@@ -306,7 +329,12 @@ border-color: #05C #05C #36a #05C;
 .sort_toggle {
   padding: 4px 8px;
   cursor: pointer;
-  background-color: white;
+  background-color: #95b7c3 !important;
+  opacity: 0.5;
+  width: 75px;
+}
+.sort_toggle:hover {
+  opacity: 1.0;
 }
 
 .sort_toggle_left {
@@ -320,8 +348,9 @@ border-color: #05C #05C #36a #05C;
 }
 
 .sort_toggle_selected {
-  background-color: #acf;
+  background-color: #95b7c3 !important;
   font-weight: bold;
+  opacity: 1.0;
 }
 
 #new_comment_comment {
@@ -337,20 +366,16 @@ border-color: #05C #05C #36a #05C;
   background: #cfc;
 }
 
-
 .comment {
   background: white;
   font-size: .75em;
-  //border: 2px solid #ddd;
-  border-radius: 4px;
+  border-top: 1px solid #ddd;
+  //border-radius: 4px;
   padding: 10px;
-  margin: 10px 0;
+  //margin: 10px 0;
   overflow: hidden;
   position: relative;
   zoom: 1;
-}
-.comment {
-  background: #ffffff;
 }
 
 .comment:nth-child(odd) {
