@@ -429,3 +429,19 @@ input#new_comment_author {
 .vote_count {
   font-weight: bold;
 }
+
+footer {
+  background-color: #95b7c3;
+  color: white;
+  padding: 25px 0;
+  font-size: .8em;
+  min-height: 75px;
+  //border-top: 1px solid #5f9baf;
+  margin-top: 200px;
+}
+footer a:link {
+  border-bottom: 1px white dotted;
+}
+footer a.logo:link {
+  border-bottom: none;
+}
