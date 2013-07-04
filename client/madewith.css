@@ -119,6 +119,7 @@ a, a:hover {
   background: white;
   //background: #3498DB;
   //color: white;
+  border-bottom: 1px solid #ddd;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
@@ -232,7 +233,7 @@ textarea.app_description {
 
 [disabled], .disabled {
   color: #ccc;
-  opacity: 0.65;
+  opacity: 0.5 !important;
 }
 
 #draft_password_show_toggle {
