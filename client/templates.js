@@ -108,6 +108,10 @@ Template.app.name_css_id = function () {
   return this.name.replace(/\./g, '_'); // replace any decimal points with an underline so css ID works properly
 };
 
+Template.app.nameHumanReadable = function () {
+  return this.name.replace(/-/g, ' '); // replace any decimal points with an underline so css ID works properly
+};
+
 Template.app.app_additional_class = function() {
   if (MadewithSession.equals('selectedAppName', this.name))
     return 'app_selected';

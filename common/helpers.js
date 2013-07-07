@@ -9,7 +9,7 @@ Madewith.commentsForApp = function(app) {
 // canonicalize a URL or bare hostname into a FQDN
 Madewith.normalizeAppName = function (name) {
   // No longer need to append meteor.com to inputted text
-  
+  /*
   var match = name.match('(.*://)?([a-zA-Z0-9\._\-]+)/?.*$');
   var host = match && match[2];
 
@@ -18,9 +18,9 @@ Madewith.normalizeAppName = function (name) {
   else
     // append '.meteor.com' if it's a bare hostname
     return host.match(/\./) ? host : host + '';
-  
+  */
   // Convert to SEO friendly URL
-  /*
+  
   var val = name;
   str = string_to_slug(val);
   function string_to_slug(str) {
@@ -44,10 +44,11 @@ Madewith.normalizeAppName = function (name) {
     
   // Trim leading and trailing whitespace and dashes. 
   str = str.replace(/^[\s|-]+|[\s|-]+$/g, '');
+  return str;
 }
 
     return str;
-*/
+
   
     
     //return name;
