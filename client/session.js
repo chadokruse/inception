@@ -14,7 +14,7 @@
  */
 
 MadewithSession = {
-  KEYS: ['order', 'selectedAppName', 'draft'], // Removed 'lastAddedAppName'
+  KEYS: ['order', 'selectedAppName', 'draft', 'lastAddedAppName'], // Removed 'lastAddedAppName'
   KEYS_WITH_EXPLICIT_ACCESSORS: ['order', 'app_name'],
 
   get: function(key) {

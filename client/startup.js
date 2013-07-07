@@ -2,6 +2,8 @@
 // - List of all apps
 // - Comments for selected app
 Meteor.startup(function () {
+  MadewithSession.set ('draft', true);
+
   MadewithSession.setOrder('recent');
 
   Meteor.subscribe("allApps", function() {

@@ -34,7 +34,7 @@ Template.draft_app.events({
     MadewithSession.set('draft', false);
   },
   'click .draft_app_submit': function() {
-    var name = $('#draft_name').val();
+    var name = Madewith.normalizeAppName($('#draft_name').val());
     var salt = Meteor.uuid();
     var password = $('#draft_password').val();
 
@@ -49,11 +49,16 @@ Template.draft_app.events({
     Meteor.call('createApp', app, function (err, id) {
       if (!err) {
         Router.setSelectedAppName(name);
+        //alert("Router set as: " + name);
         Madewith.animateToSelectedApp();
+        //alert("Animated to Selected App");
         MadewithSession.set('draft', false);
-        //MadewithSession.set('lastAddedAppName', name); // No longer using lastAddedAppName
+        //alert("Session sete to draft false - close draft window");
+        MadewithSession.set('lastAddedAppName', name); // No longer using lastAddedAppName
+        //alert("Set session to last Added App Name: " + name);
       }
     });
+    //???.stopPropagation();
   }
 });
 
@@ -82,8 +87,9 @@ Template.app.events({
     event.stopPropagation(); // so that we don't collapse the app
   },
   'click .vote': function(event) {
+    Router.setSelectedAppName(null);
     Meteor.call('vote', this.name);
-    // Router.setSelectedAppName(this.name);
+    //Router.setSelectedAppName(this.name);
     event.stopPropagation();
   },
   
@@ -148,4 +154,8 @@ Template.action_bar.additional_class = function(order) {
 //Template.install_badge_instructions.just_added_app = function() {
  // return MadewithSession.equals('lastAddedAppName', this.name);
 //};
+
+Template.app.just_added_app = function() {
+  return MadewithSession.equals('lastAddedAppName', this.name);
+}
 

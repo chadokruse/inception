@@ -26,8 +26,7 @@
 <template name="app_list">
   <div class="app_list">
     <div class="app_list_inner">
-      <p class="examples_madewith">Describe your issue</p>
-      {{> draft_app}} <!-- If you want to hide the input form on page load: > add_or_draft_app -->
+      {{> add_or_draft_app}} <!-- If you want to hide the input form on page load: > add_or_draft_app -->
       {{> action_bar}}
     <br style="clear: both;">
       {{#each apps}}
@@ -43,42 +42,6 @@
     </div><!--Help the hacker community find something meaningful to work on. -->
     <div class="pull-right" style="margin-top:18px;"><em>Inspiring developers to do well by doing good<br> <span style="color:#95b7c3">Startup ideas from the charitable world</span></em></div>
   </div>
-</template>
-
-<template name="add_or_draft_app"> <!-- No Longer Using the Toggle Feature - Always Show Input Form -->
-  {{#if draft}}
-    {{> draft_app}}
-  {{else}}
-  <button class="add_app">
-    Add your app
-  </button>
-  {{/if}}
-</template>
-
-<template name="draft_app">
-  <form class="form-inline">
-    <div class="app-input">
-      <div class="draft_field">
-        <label for="draft_description">As a</label> <input id="draft_description"
-        class="span3"
-        placeholder="foundation" /><label for="draft_name">&nbsp;I want</label>
-        <input id="draft_name" class="span6" placeholder="an easier way to see what Bill Gates is up to" /><br>
-        <label for="draft_github_url">so that</label> 
-        <input id="draft_github_url" class="span9" placeholder="I can be inspired and learn from others doing amazing thinking" />
-      </div>
-      <div id="draft_password_show_toggle" class="pull-left draft_field">
-        <label for="draft_password" disabled=true>Password</label>
-        <input type="password" id="draft_password" placeholder="(for editing later)" class="disabled" />
-      </div>
-      <div class="pull-left muted"><h6><a href="javascript:void(0)" class="tooltips" data-toggle="tooltip" data-placement="right" title="Describe something that annoys you on a daily basis. Focus on a pain point, not an idea."><i class="icon-info-sign"></i> Tips<h6></a>
-      </div>
-      <div class="pull-right">
-        <!--button class="draft_app_cancel">cancel</button-->
-        <button class="btn draft_app_submit" disabled=true>submit</button>
-      </div>
-    </div>
-    <div class="required muted pull-right">* all fields required</div>
-  </form>
 </template>
 
 <template name="intro">
@@ -117,15 +80,52 @@
       <div class="container">
         <div class="row-fluid">
           <div id="ticker" class="intro span8 offset2 text-center">
-              <div>What can Silicon Valley create to make you more effective in your work?</div>
+              <div>Hackers + Ideas = More Effective Philanthropy<span style="font-size: 80%;vertical-align: super;">2</span></div>
           </div>
         </div>
       </div>    
   </div>
 </template>
 
+<template name="add_or_draft_app"> <!-- No Longer Using the Toggle Feature - Always Show Input Form -->
+  {{#if draft}}
+    <p class="examples_madewith">What should Silicon Valley build next?</p>
+    {{> draft_app}}
+  {{else}}
+  <p class="examples_madewith">What should Silicon Valley build next?</p>
+  <button class="btn btn-large add_app">
+    Add an idea
+  </button>
+  {{/if}}
+</template>
+
+<template name="draft_app">
+    <div class="app-input form-inline">
+      <div class="draft_field">
+        <label for="draft_description">As a</label> <input id="draft_description"
+        class="span3"
+        placeholder="foundation" autofocus="autofocus" /><label for="draft_name">&nbsp;I want</label>
+        <input id="draft_name" class="span6" placeholder="an easier way to see what Bill Gates is up to" /><br>
+        <label for="draft_github_url">so that</label> 
+        <input id="draft_github_url" class="span9" placeholder="I can be inspired and learn from others doing amazing thinking" />
+      </div>
+      <div id="draft_password_show_toggle" class="pull-left draft_field">
+        <label for="draft_password" disabled=true>Password</label>
+        <input type="password" id="draft_password" placeholder="(for editing later)" class="disabled" />
+      </div>
+      <div class="pull-left muted"><h6><a href="javascript:void(0)" class="tooltips" data-toggle="tooltip" data-placement="right" title="Describe something that annoys you on a daily basis. Focus on a pain point, not an idea."><i class="icon-info-sign"></i> Tips<h6></a>
+      </div>
+      <div class="pull-right">
+        <!--button class="draft_app_cancel">cancel</button-->
+        <button class="btn draft_app_submit" disabled=true>submit</button>
+      </div>
+    </div>
+    <div class="required muted pull-right">* all fields required</div>
+</template>
+
 <template name="app">
   <div class="app {{app_additional_class}}" id="app_{{name_css_id}}">
+    {{> install_badge_instructions}}
     <div class="app_description">
       As a <span>{{description}}</span><strong> I want {{name}}</strong>
       <div class="deEmphasize">so that {{github_url}}
@@ -181,7 +181,16 @@
       class='btn sort_toggle sort_toggle_right {{additional_class "popular"}}'>Popular
       </div>
     </div>
+    <!--div class="action_bar_header pull-left">Some Header </div-->
 </div>
+</template>
+
+<template name="install_badge_instructions">
+  {{#if just_added_app}}
+  <div class="install_badge_instructions">
+    To add an official "Made with Meteor" badge to your app, just run:<br><strong><code style="font-size: 120%">meteor add madewith</code></strong>.
+  </div>
+  {{/if}}
 </template>
 
 <template name="footer">
