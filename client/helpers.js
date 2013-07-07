@@ -8,7 +8,7 @@ Madewith.animateToSelectedApp = function() {
 
   var app_name = MadewithSession.getSelectedNormalizedAppName();
   if (app_name) {
-    var app_div = $('#app_' + app_name.replace(/\./g, '_'));
+    var app_div = $('#app_' + app_name);
     if (app_div.length > 0) {
       $('body').animate({scrollTop: app_div.position().top}, 1000);
     } else {

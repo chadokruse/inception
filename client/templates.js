@@ -49,13 +49,9 @@ Template.draft_app.events({
     Meteor.call('createApp', app, function (err, id) {
       if (!err) {
         Router.setSelectedAppName(name);
-        //alert("Router set as: " + name);
-        Madewith.animateToSelectedApp();
-        //alert("Animated to Selected App");
         MadewithSession.set('draft', false);
-        //alert("Session sete to draft false - close draft window");
+        Madewith.animateToSelectedApp();        
         MadewithSession.set('lastAddedAppName', name); // No longer using lastAddedAppName
-        //alert("Set session to last Added App Name: " + name);
       }
     });
     //???.stopPropagation();
