@@ -56,7 +56,7 @@ Template.draft_app.events({
     });
 
     //Sprintly API Call
-    /*
+    
     var sprintlyWho = $('#draft_description').val();
     var sprintlyWhat = name.replace(/-/g, ' ');
     var sprintlyWhy = $('#draft_github_url').val(); 
@@ -75,15 +75,16 @@ Template.draft_app.events({
         //Session.set("showBadEmail", true); // From sample project - not used yet
       } else {
         console.log("respJson: ", respJson);
+        Session.set("sprintlyResponse", respJson)
       }
-      return false;
+      
     }); 
-    */   
+      
   }
 });
 
-Template.draft_app.params = function() {
-    return Session.get("params") || [];
+Template.draft_app.sprintlyResponse = function() {
+    return Session.get("sprintlyResponse") || [];
   }
 
 Template.app_list.events({

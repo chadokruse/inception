@@ -1,6 +1,6 @@
 Meteor.methods({
   // Create card in Sprint.ly
-  /*
+  
   postToSprintly: function (params) {
     console.log("API Call Method was made");
     var email = Meteor.settings.sprintlyEmail;
@@ -11,7 +11,8 @@ Meteor.methods({
     console.log(url);
     var result = Meteor.http.post(url,
                                   {auth: email +":"+ apiKey, 
-                                  params: params
+                                  params: params,
+                                  timeout: 30000
                                 });
     console.log("result");
     if(result.statusCode==200) {
@@ -29,8 +30,7 @@ Meteor.methods({
       console.log("Response issue: ", result.statusCode);
       var errorJson = JSON.parse(result.content);
       throw new Meteor.Error(result.statusCode, errorJson.error);
-      return false;
     }
   }
-  */
+  
 });
