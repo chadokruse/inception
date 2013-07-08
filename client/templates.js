@@ -54,9 +54,37 @@ Template.draft_app.events({
         MadewithSession.set('lastAddedAppName', name); // No longer using lastAddedAppName
       }
     });
-    //???.stopPropagation();
+
+    //Sprintly API Call
+    /*
+    var sprintlyWho = $('#draft_description').val();
+    var sprintlyWhat = name.replace(/-/g, ' ');
+    var sprintlyWhy = $('#draft_github_url').val(); 
+
+    var params = { 
+        "type": "story",
+        "who": sprintlyWho,
+        "what": sprintlyWhat,
+        "why": sprintlyWhy
+      };
+
+    Meteor.call('postToSprintly', params, function (err, respJson) {
+      if(err) {
+        window.alert("Error: " + err.reason);
+        console.log("error occured on receiving data on server. ", err);
+        //Session.set("showBadEmail", true); // From sample project - not used yet
+      } else {
+        console.log("respJson: ", respJson);
+      }
+      return false;
+    }); 
+    */   
   }
 });
+
+Template.draft_app.params = function() {
+    return Session.get("params") || [];
+  }
 
 Template.app_list.events({
   'click .add_app': function() {
@@ -158,4 +186,3 @@ Template.action_bar.additional_class = function(order) {
 Template.app.just_added_app = function() {
   return MadewithSession.equals('lastAddedAppName', this.name);
 }
-
