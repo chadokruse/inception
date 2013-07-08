@@ -1,4 +1,8 @@
 {
+	"public": {
+	"gaId": "UA-12345678-1",
+	"gaDomain": "yoursite.com"
+	},
 	"sprintlyEmail": "something@gmail.com",
 	"sprintlyApiKey": "1234567890abcdefg123456790abcdef",
 	"sprintlyProductId": "12345"

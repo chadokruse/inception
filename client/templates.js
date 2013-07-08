@@ -19,8 +19,8 @@ Template.app_list.apps = function() {
 Template.ga.rendered = function(){
     if (window._gaq) return;
     window._gaq = window._gaq || [];
-    _gaq.push(['_setAccount', 'UA-37513215-1']);
-    _gaq.push(['_setDomainName', 'getkyn.com']);
+    _gaq.push(['_setAccount', Meteor.settings.public.gaId]);
+    _gaq.push(['_setDomainName', Meteor.settings.public.gaDomain]);
     _gaq.push(['_trackPageview']);
 
     (function() {
