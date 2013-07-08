@@ -2,7 +2,7 @@
 // - List of all apps
 // - Comments for selected app
 Meteor.startup(function () {
-  MadewithSession.set ('draft', true);
+  MadewithSession.set ('draft', false); //Undecided on showing open form upon page load
 
   MadewithSession.setOrder('recent');
 
