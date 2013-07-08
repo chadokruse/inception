@@ -80,7 +80,8 @@ Template.draft_app.events({
         "type": "story",
         "who": sprintlyWho,
         "what": sprintlyWhat,
-        "why": sprintlyWhy
+        "why": sprintlyWhy,
+        "tags": "SiteSubmission"
       };
 
     Meteor.call('postToSprintly', params, function (err, respJson) {
