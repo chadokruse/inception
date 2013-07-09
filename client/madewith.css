@@ -96,6 +96,10 @@ input:focus {
   border-radius:50px;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 #intro-subtext {
   margin: 0 0 75px 0; 
   //background-color:#ffc3aa;
@@ -205,7 +209,11 @@ textarea.app_description {
 }
 
 .draft_field {
-  margin-bottom: 10px;
+  //margin-bottom: 20px;
+}
+
+.bottom-buffer {
+  margin-bottom: 20px !important;
 }
 
 .draft_field label {
@@ -213,7 +221,7 @@ textarea.app_description {
   font-weight: bold;
   padding: 1px;
   line-height: 1em;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .deEmphasize {
@@ -318,6 +326,7 @@ border-color: #05C #05C #36a #05C;
 .examples_madewith {
   font-size: 1.7em;
   font-weight: 700;
+  line-height: 1em;
   letter-spacing: -2px;
   text-shadow: 1px 1px #fff;
   margin-bottom: 30px;
@@ -366,7 +375,7 @@ border-color: #05C #05C #36a #05C;
 
 #new_comment_comment {
   display: block;
-  width: 565px;
+  //width: 565px;
   height: 100px;
 }
 
@@ -415,12 +424,13 @@ iframe.twitter-share-button.twitter-count-horizontal {
 
 .comment_author, #new_comment_author {
   float: left;
-  width: 100px;
+  //width: 100px;
   font-weight: bold;
 }
 
 #new_comment_author {
   position: relative;
+  margin-bottom: 10px;
 }
 
 input#new_comment_author {
@@ -443,6 +453,13 @@ input#new_comment_author {
   margin-top: 5px;
   float: right;
   clear: both;
+}
+
+@media (max-width: 767px) {
+  .center-if-mobile {
+    float: none;
+    text-align: center;
+  }
 }
 
 .vote_count {

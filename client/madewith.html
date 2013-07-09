@@ -60,19 +60,19 @@
           <!--p>This site was created to connect the philanthropic and hacker communities. There are thousands of entrepreneurial developers looking for new problems to solve, and most will default to what they know: photo-sharing apps and tech tools they will use themselves.</p-->
           <!--p class="text-center" style="font-size:1.2em;font-weight:bold;"><strong>Foundations and nonprofits:</strong> Inspire startup teams to tackle bigger issues by describing a pain point you see in your everyday charitable work. </p-->
           <div class="row-fluid">
-            <div class="span4 pull-left"><h3>Philanthropists</h3></div>
-            <div class="span4 pagination-centered"></div>
-            <div class="span4 pull-right text-right"><h3>Weekend Hackers</h3></div>
+            <div class="span4 pull-left center-if-mobile"><h3>Philanthropists</h3></div>
+            <div class="span4 pagination-centered hidden-phone"></div>
+            <div class="span4 pull-right text-right nowrap hidden-phone"><h3>Weekend Hackers</h3></div>
           </div>
           <div class="row-fluid">
-            <div class="span4 pull-left"><h3>Nonprofits</h3></div>
+            <div class="span4 pull-left center-if-mobile"><h3>Nonprofits</h3></div>
             <div class="intro-center-text span4 pagination-centered"><h3>inspiring <i class="icon-circle-arrow-right"></i></h3></div>
-            <div class="span4 pull-right text-right"><h3>Developers</h3></div>
+            <div class="span4 pull-right text-right nowrap center-if-mobile"><h3>Developers</h3></div>
           </div>
           <div class="row-fluid">
-            <div class="span4 pull-left"><h3>Foundations</h3></div>
-            <div class="span4 pagination-centered"></div>
-            <div class="span4 pull-right text-right"><h3>Startup Teams</h3></div>
+            <div class="span4 pull-left hidden-phone"><h3>Foundations</h3></div>
+            <div class="span4 pagination-centered hidden-phone"></div>
+            <div class="span4 pull-right text-right nowrap center-if-mobile"><h3>Startup Teams</h3></div>
           </div>
         </div>
       </div>
@@ -102,27 +102,34 @@
 </template>
 
 <template name="draft_app">
-    <div class="app-input form-inline">
+  <div class="app-input form-inline">
+    <div class="">
       <div class="draft_field">
         <label for="draft_description">As a</label> <input id="draft_description"
         class="span3"
-        placeholder="foundation" autofocus="autofocus" /><label for="draft_name">&nbsp;I want</label>
+        placeholder="foundation" autofocus="autofocus" />
+
+
+        <label for="draft_name">&nbsp;I want</label>
         <input id="draft_name" class="span6" placeholder="an easier way to see what Bill Gates is up to" /><br>
+      </div>
+      <div class="draft_field bottom-buffer">
         <label for="draft_github_url">so that</label> 
         <input id="draft_github_url" class="span9" placeholder="I can be inspired and learn from others doing amazing thinking" />
       </div>
-      <div id="draft_password_show_toggle" class="pull-left draft_field">
-        <label for="draft_password" disabled=true>Password</label>
-        <input type="password" id="draft_password" placeholder="(for editing later)" class="disabled" />
-      </div>
-      <div class="pull-left muted"><h6><a href="javascript:void(0)" class="tooltips" data-toggle="tooltip" data-placement="right" title="Describe something that annoys you on a daily basis. Focus on a pain point, not an idea."><i class="icon-info-sign"></i> Tips<h6></a>
-      </div>
-      <div class="pull-right">
-        <!--button class="draft_app_cancel">cancel</button-->
-        <button class="btn draft_app_submit" disabled=true>submit</button>
-      </div>
     </div>
-    <div class="required muted pull-right">* all fields required</div>
+    <div id="draft_password_show_toggle" class="pull-left draft_field">
+      <label for="draft_password" disabled=true>Password</label>
+      <input type="password" id="draft_password" placeholder="(for editing later)" class="disabled" />
+    </div>
+    <div class="pull-left muted"><h6><a href="javascript:void(0)" class="tooltips" data-toggle="tooltip" data-placement="right" title="Describe something that annoys you on a daily basis. Focus on a pain point, not an idea."><i class="icon-info-sign"></i> Tips<h6></a>
+    </div>
+    <div class="pull-right">
+      <!--button class="draft_app_cancel">cancel</button-->
+      <button class="btn draft_app_submit" disabled=true>submit</button>
+    </div>
+  </div>
+  <div class="required muted pull-right">* all fields required</div>
 </template>
 
 <template name="app">
@@ -167,8 +174,8 @@
   </div>
   {{/each}}
   <div class="new_comment">
-    <input id="new_comment_author" placeholder=" Your name"/>
-    <textarea id="new_comment_comment"></textarea>
+    <input id="new_comment_author" class="span3" placeholder=" Your name"/>
+    <textarea id="new_comment_comment" class="span9"></textarea>
     <button class="btn new_comment_submit" disabled="true">add comment</button>
   </div>
 </template>
@@ -217,3 +224,4 @@
 </template>
 
 <template name="ga"></template>
+<template name="admin"></template>
