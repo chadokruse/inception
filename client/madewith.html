@@ -189,8 +189,8 @@
 
 <template name="install_badge_instructions">
   {{#if just_added_app}}
-  <div class="install_badge_instructions">
-    To add an official "Made with Meteor" badge to your app, just run:<br><strong><code style="font-size: 120%">meteor add madewith</code></strong>.
+  <div class="share pull-right">
+    {{> twitter}}
   </div>
   {{/if}}
 </template>
@@ -210,6 +210,10 @@
       </div>
     </div>
   </footer>
+</template>
+
+<template name="twitter">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-text="What can Silicon Valley build for philanthropy? Here's my idea:" data-via="getkyn" data-hashtags="hackforgood,inception">Tweet</a>
 </template>
 
 <template name="ga"></template>

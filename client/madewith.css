@@ -377,6 +377,15 @@ border-color: #05C #05C #36a #05C;
   background: #cfc;
 }
 
+.share {
+  font-size: 0.75em;
+}
+
+iframe.twitter-share-button.twitter-count-horizontal {
+  vertical-align: text-bottom;
+  margin-left: 10px;
+}
+
 .comment {
   background: white;
   font-size: .75em;
