@@ -2,6 +2,7 @@ Meteor.methods({
   createApp: function(app) {
     check(app, {
       name: String,
+      name_original: String,
       description: String,
       github_url: String,
       pw_salt: String,

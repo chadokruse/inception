@@ -50,11 +50,13 @@ Template.draft_app.events({
   },
   'click .draft_app_submit': function() {
     var name = Madewith.normalizeAppName($('#draft_name').val());
+    var name_original = $('#draft_name').val();
     var salt = Meteor.uuid();
     var password = $('#draft_password').val();
 
     var app = {
       name: name,
+      name_original: name_original,
       description: $('#draft_description').val(),
       github_url: Madewith.removeUrlProtocol($('#draft_github_url').val()),
       pw_salt: salt,
