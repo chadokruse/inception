@@ -1,5 +1,8 @@
 {
   "packages": {
-    "font-awesome": {}
+    "font-awesome": {},
+    "spin": {},
+    "router": {},
+    "z-mongo-admin": {}
   }
 }
