@@ -16,6 +16,7 @@ Template.app_list.apps = function() {
 };
 
 // Google Analytics
+/* Disable for demo
 Template.ga.rendered = function(){
     if (window._gaq) return;
     window._gaq = window._gaq || [];
@@ -29,6 +30,7 @@ Template.ga.rendered = function(){
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
  }
+ */
 
 Template.add_or_draft_app.draft = function() {
   return MadewithSession.get('draft');
@@ -77,7 +79,7 @@ Template.draft_app.events({
     });
 
     //Sprintly API Call
-    
+    /* Disable for demo
     var sprintlyWho = $('#draft_description').val();
     var sprintlyWhat = name.replace(/-/g, ' ');
     var sprintlyWhy = $('#draft_github_url').val(); 
@@ -101,13 +103,15 @@ Template.draft_app.events({
       }
       
     }); 
+*/
       
   }
 });
-
+/* Disable for demo
 Template.draft_app.sprintlyResponse = function() {
     return Session.get("sprintlyResponse") || [];
   }
+*/
 
 Template.app_list.events({
   'click .add_app': function() {

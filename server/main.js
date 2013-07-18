@@ -1,6 +1,6 @@
 Meteor.methods({
   // Create card in Sprint.ly
-  
+  /* Disable for demo
   postToSprintly: function (params) {
     console.log("API Call Method was made");
     var email = Meteor.settings.sprintlyEmail;
@@ -32,5 +32,6 @@ Meteor.methods({
       throw new Meteor.Error(result.statusCode, errorJson.error);
     }
   }
+  */
   
 });
