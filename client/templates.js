@@ -34,6 +34,10 @@ Template.add_or_draft_app.draft = function() {
   return MadewithSession.get('draft');
 };
 
+Template.app_list.rendered = function() {
+  $(".spinner").hide();
+};
+
 Template.draft_app.rendered = function() {
    $('.tooltips').tooltip(); //initialize all tooltips in this template
 };
