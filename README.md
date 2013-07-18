@@ -13,7 +13,9 @@ This is a fork of the most excellent [Made with Meteor](https://github.com/meteo
 
 ### Notable todos
 1.  Update code naming conventions to map to new use (e.g. ideas instead of apps/names, use who/what/why)
-2.  Removed audit-arguments-check package due to compatibility error. Would be nice (and secure) to add back.
+2.  I removed the audit-arguments-check package due to compatibility error. Would be nice (and secure) to add back.
+3.  Occasionally there is a delay on prod (as hosted by meteor). Currently messing around with using spin.js to indicate Meteor is thinking, but this is still a work in progress.
+4.  The z-mongo-admin package is awesome! It works great but current implementation is throwing some errors which seem to be innocuous, but nonetheless need to be figured out.
 
 
 ## Getting started
