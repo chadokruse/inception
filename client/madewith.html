@@ -31,10 +31,13 @@
       {{> add_or_draft_app}} <!-- If you want to hide the input form on page load: > add_or_draft_app -->
       {{> action_bar}}
     <br style="clear: both;">
-      {{> spinner}}
-      {{#each apps}}
-      {{> app}}
-      {{/each}}
+      {{#if appsLoaded}} <!-- If there's a delay upon page load, show a spinner -->
+        {{#each apps}}
+        {{> app}}
+        {{/each}}
+      {{else}}
+        {{> spinner}} <!-- Note: this is pulled from the z-mongo-db package. Not ideal -->
+      {{/if}}
     </div>
   </div>
 </template>

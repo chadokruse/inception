@@ -34,8 +34,8 @@ Template.add_or_draft_app.draft = function() {
   return MadewithSession.get('draft');
 };
 
-Template.app_list.rendered = function() {
-  $(".spinner").hide();
+Template.app_list.appsLoaded = function () {
+  return Session.get('appsLoaded');
 };
 
 Template.draft_app.rendered = function() {

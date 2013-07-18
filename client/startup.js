@@ -12,6 +12,11 @@ Meteor.startup(function () {
     Madewith.animateToSelectedApp();
   });
 
+  //Needed for spinner
+  Meteor.subscribe('allApps', function onComplete() {
+  Session.set('appsLoaded', true);
+  });
+
   // Subscribe to comments on the selected app, if one is selected
   Meteor.autosubscribe(function () {
     var app_name = MadewithSession.getSelectedNormalizedAppName();
