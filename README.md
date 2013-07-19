@@ -23,9 +23,14 @@ See instructions [here](https://github.com/chadokruse/meteor-coming-soon-email-c
 
 ## Usage
  
-1. Add your Sprint.ly credentials to settings.json  
-2. If you deploy to a public site, be sure to navigate to yourapp.com/admin and enter in a set of admin credentials. You app will be exposed until you do so.
-3. Update relevant Google Analytics fields per your setup
+
+1. Add Meteorite if not already installed  
+`npm install -g meteorite`
+2. Add the following packages: font-awesome, spin, router, z-mongo-admin  
+e.g. `mrt add spin`
+2. Add your Sprint.ly credentials to settings.json  
+3. If you deploy to a public site, be sure to navigate to yourapp.com/admin and enter in a set of admin credentials. You app will be exposed until you do so.
+4. Update relevant Google Analytics fields per your setup
 
 (This section under development!) 
 
