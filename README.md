@@ -27,6 +27,8 @@ See instructions [here](https://github.com/chadokruse/meteor-coming-soon-email-c
 2. If you deploy to a public site, be sure to navigate to yourapp.com/admin and enter in a set of admin credentials. You app will be exposed until you do so.
 3. Update relevant Google Analytics fields per your setup
 
+*Note: I use a [custom version](https://github.com/chadokruse/inception/blob/master/smart.lock#L32) of z-mongo that cannot be deployed via meteorite/atmosphere. See [z-mongo-clean](https://github.com/chadokruse/inception/tree/z-mongo-clean) branch of this repo for a clean version (it will hijack your page titles…not a killer issue, just slightly annoying).
+
 (This section under development!) 
 
 
