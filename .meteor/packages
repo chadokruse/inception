@@ -4,7 +4,9 @@
 # but you can also edit it by hand.
 
 backbone
-preserve-inputs
 bootstrap
 http
 spiderable
+standard-app-packages
+houston
+font-awesome

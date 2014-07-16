@@ -1,8 +1,6 @@
 {
   "packages": {
-    "font-awesome": {},
-    "spin": {},
     "router": {},
-    "z-mongo-admin-edited": {}
+    "houston": {}
   }
 }

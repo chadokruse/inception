@@ -2,37 +2,50 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "font-awesome": {},
-      "spin": {},
       "router": {},
-      "z-mongo-admin": {}
+      "houston": {}
     },
     "packages": {
-      "font-awesome": {
-        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
-        "tag": "v3.2.0",
-        "commit": "2cba6f907a2579cae2d399b522f9544c13d5e091"
-      },
-      "spin": {
-        "git": "https://github.com/SachaG/meteor-spin.git",
-        "tag": "v0.2.0",
-        "commit": "fd3a2871a69442848b4b4e74f5e1ae28fa4a95a4"
-      },
       "router": {
         "git": "https://github.com/tmeasday/meteor-router.git",
-        "tag": "v0.5.3",
-        "commit": "7bd3a1bdd1099625bb8b49406d9b8f961d6f4a17"
+        "tag": "v0.6.1",
+        "commit": "8ec75fec7affdefc787d19f23b36fd6d1d44ef04"
+      },
+      "houston": {
+        "git": "https://github.com/gterrono/houston.git",
+        "tag": "v1.0.6",
+        "commit": "49765acf835385de6de6160b0c86514d5af09395"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
         "tag": "v1.3.5",
         "commit": "b99ed8380aefd10b2afc8f18d9eed4dd0d8ea9cb"
       },
-      "z-mongo-admin-edited": {
-        "git": "https://github.com/chadokruse/meteor-admin-ui.git",
-        "tag": "v0.1.1",
-        "commit": "e78cd1668caee84b8bf01af2db6cc35f9ef917a3"
+      "HTML5-History-API": {
+        "git": "https://github.com/tmeasday/meteor-HTML5-History-API.git",
+        "tag": "v4.1.2",
+        "commit": "b5fca79f9ae8936e5f748a04f475295f4fa1cc7a"
       },
+      "paginated-subscription": {
+        "git": "https://github.com/tmeasday/meteor-paginated-subscription.git",
+        "tag": "v0.2.2",
+        "commit": "2133a2163575f569f90253f81314f21b2bf08d20"
+      },
+      "spin": {
+        "git": "https://github.com/SachaG/meteor-spin.git",
+        "tag": "v0.2.2",
+        "commit": "3f655f0016228e4195acc784c45d3e3a247dc39f"
+      },
+      "iron-router": {
+        "git": "https://github.com/EventedMind/iron-router.git",
+        "tag": "v0.7.1",
+        "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.4",
+        "commit": "b40e9b0612329288d75cf52ad14a7da64bb8618f"
+      }
     }
   }
 }
