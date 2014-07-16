@@ -4,8 +4,6 @@ html {
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  //background-image: url('/wet-graphpaper.jpg');
-  //background-position: center;
   background-image: -webkit-gradient(linear, left top,right top,color-stop(0,#fcfcfc),color-stop(0.25,#efefde),color-stop(1,#d4e6f2));
   /*background-image:-webkit-linear-gradient(left,#fcfcfc 0%,#efefde 25%,#d4e6f2 100%);*/
   background-image: -webkit-linear-gradient(bottom,#fcfcfc 0%,#efefde 25%,#d4e6f2 100%);
@@ -16,7 +14,6 @@ body {
   background-color: #fcfcfc;
   background-repeat: no-repeat;
   color:#42494e;
-  //color: #672505;
   font-size: 18px;
   margin-top: 50px;
 }
@@ -63,9 +60,7 @@ input:focus {
 }
 
 .header {
-  // background: url(/small-rocketship.gif) no-repeat 500px center;
   height: 60px;
-  //border-bottom: 5px solid white;
   margin-bottom: 10px;
 }
 
@@ -79,14 +74,13 @@ input:focus {
 }
 
 #intro {
-  margin: 50px 0 0 0; 
+  margin: 50px 0 0 0;
   background-color:#ff8756;
   color:white;
   font-size: .8em;
 }
 
 .intro {
-  //margin: 50px 0;
   padding: 20px;
 }
 
@@ -101,12 +95,8 @@ input:focus {
 }
 
 #intro-subtext {
-  margin: 0 0 75px 0; 
-  //background-color:#ffc3aa;
-  //background-color:#ff6f40;
+  margin: 0 0 75px 0;
   background-color: #95b7c3;
-  //color:#ff8756;
-  //color:#ffc3aa;
   color: white;
   font-size: 1.0em;
   font-weight: bold;
@@ -125,8 +115,6 @@ input:focus {
   padding: 20px;
   margin-top: 20px;
   background: white;
-  //background: #3498DB;
-  //color: white;
   border-bottom: 1px solid #ddd;
   border-radius: 8px;
   position: relative;
@@ -137,8 +125,6 @@ input:focus {
   padding: 20px;
   margin-top: 20px;
   background: white;
-  //background: #3498DB;
-  //color: white;
   border-radius: 8px;
   border-bottom: 1px solid #ddd;
   position: relative;
@@ -147,27 +133,21 @@ input:focus {
 
 .draft_description {
   padding: 5px 25px;
-  //background-color: #bed5db;
-  //color: white;
   font-size: .9em;
 }
 
 .draft_name {
   padding: 25px 25px;
-  //background-color: #95b7c3;
-  //color: white;
   font-size: 1.5em;
 }
 
 .draft_github_url {
   padding: 5px 25px;
-  //background-color: #bed5db;
-  //color: white;
   font-size: .9em;
 }
 
 .app_selected .app_description span {
-  //background: #ff0;
+
 }
 
 .vote {
@@ -188,7 +168,6 @@ input:focus {
 }
 
 .upvote {
-  //color: grey;
   display: inline;
 }
 
@@ -209,7 +188,7 @@ textarea.app_description {
 }
 
 .draft_field {
-  //margin-bottom: 20px;
+
 }
 
 .bottom-buffer {
@@ -263,15 +242,12 @@ input {
   border-bottom: 1px dashed #c2c2c2;
   border-left: none;
   width: 98%;
-  // font-size: ;
-  // color: ;
 }
 
 .add_app {
   font-size: 1.5em;
   width: 8em;
   letter-spacing: -1px;
-  //margin-left: auto;
   display: block;
   margin-bottom: 30px;
   text-shadow: -1px -2px 0 rgba(0, 0, 0, 0.25);
@@ -291,8 +267,6 @@ background-image: -o-linear-gradient(top, #39F, #17c);
 background-image: linear-gradient(top, #39F, #17c);
 
 border-color: #05C #05C #36a #05C;
-
-//  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   color: white;
@@ -310,15 +284,13 @@ border-color: #05C #05C #36a #05C;
 }
 
 .comments_expanded_arrow {
-  // font-size: 0.7em;
-  //vertical-align: middle;
+
 }
 
 .header_madewith {
   font-size: 3.5em;
   float: left;
   font-weight: 700;
-  // color: white;
   letter-spacing: -2px;
   text-shadow: 1px 1px #fff;
 }
@@ -333,7 +305,6 @@ border-color: #05C #05C #36a #05C;
 }
 
 .action_bar_container {
-  //border-bottom: 1px dashed #95b7c3;
   padding-top: 50px;
   clear: both;
 }
@@ -375,7 +346,6 @@ border-color: #05C #05C #36a #05C;
 
 #new_comment_comment {
   display: block;
-  //width: 565px;
   height: 100px;
 }
 
@@ -399,9 +369,7 @@ iframe.twitter-share-button.twitter-count-horizontal {
   background: white;
   font-size: .75em;
   border-top: 1px solid #ddd;
-  //border-radius: 4px;
   padding: 10px;
-  //margin: 10px 0;
   overflow: hidden;
   position: relative;
   zoom: 1;
@@ -413,9 +381,7 @@ iframe.twitter-share-button.twitter-count-horizontal {
 
 .new_comment {
   background: white;
-  //border: 2px solid #ddd;
   border-radius: 4px;
-  //padding: 10px;
   margin: 20px 0;
   overflow: hidden;
   position: relative;
@@ -424,7 +390,6 @@ iframe.twitter-share-button.twitter-count-horizontal {
 
 .comment_author, #new_comment_author {
   float: left;
-  //width: 100px;
   font-weight: bold;
 }
 
@@ -472,7 +437,6 @@ footer {
   padding: 25px 0;
   font-size: .8em;
   min-height: 75px;
-  //border-top: 1px solid #5f9baf;
   margin-top: 200px;
 }
 footer a:link {
