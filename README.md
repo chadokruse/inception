@@ -3,8 +3,8 @@
 
 This is a fork of the most excellent [Made with Meteor](https://github.com/meteor/madewith) sample app repurposed to gather ideas instead of app names and urls.
 
-### Notable additions   
-1. Added Mad-Lib style input form  
+### Notable additions
+1. Added Mad-Lib style input form
 3. Added Mongo Admin feature
 4. Updated styling
 5. Added SEO-friendly URLs
@@ -15,34 +15,32 @@ This is a fork of the most excellent [Made with Meteor](https://github.com/meteo
 1.  Update code naming conventions to map to new use (e.g. ideas instead of apps/names, use who/what/why)
 2.  I removed the audit-arguments-check package due to compatibility error. Would be nice (and secure) to add back.
 3.  ~~Occasionally there is a delay on prod (as hosted by meteor). Currently messing around with using spin.js to indicate Meteor is thinking, but this is still a work in progress.~~
-4.  The z-mongo-admin package is awesome! It works great but current implementation is throwing some errors which seem to be innocuous, but nonetheless need to be figured out.
+4.  The Houston package is awesome! It works great but current implementation is throwing some errors which seem to be innocuous, but nonetheless need to be figured out.
 
 
 ## Getting started
 See instructions [here](https://github.com/chadokruse/meteor-coming-soon-email-capture#getting-started) if this is your first Meteor app.
 
 ## Usage
- 
-1. Add your Sprint.ly credentials to settings.json  
+
+1. Add your Sprint.ly credentials to settings.json
 2. If you deploy to a public site, be sure to navigate to yourapp.com/admin and enter in a set of admin credentials. You app will be exposed until you do so.
 3. Update relevant Google Analytics fields per your setup
 
-*Note: I use a [custom version](https://github.com/chadokruse/inception/blob/master/smart.lock#L32) of z-mongo that cannot be deployed via meteorite/atmosphere. See [z-mongo-clean](https://github.com/chadokruse/inception/tree/z-mongo-clean) branch of this repo for a clean version (it will hijack your page titles…not a killer issue, just slightly annoying).
-
-(This section under development!) 
+(This section under development!)
 
 
 ## Screenshots
 
 ![Landing Page](https://github.com/chadokruse/inception/raw/master/public/screenshot1.png)
 
-## Disclaimer  
+## Disclaimer
 
 This code is provided "as is" with no warranties. It'll probably break and may expose your api keys and all of your site visitors' data. Proceed with caution.
 
 ### License
 
-The Inception name, logo, and idea content is copyright Chad Kruse and may not be used for commercial projects. Everything else, do with it as you wish, commercial or otherwise. If you like formal licenses: Copyright (c) 2013 Chad Kruse, released under the MIT license.  
+The Inception name and logo is copyright Chad Kruse and may not be used for commercial projects. Everything else, do with it as you wish, commercial or otherwise. If you like formal licenses: Copyright (c) 2013 Chad Kruse, released under the MIT license.
 
 See [original meteor app](https://github.com/meteor/madewith) for licensing covering the original work.
 
